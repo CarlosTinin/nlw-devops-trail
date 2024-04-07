@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    name: "Build and Push"
+    name: 'Build and Push'
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
         echo "sha=$SHA" >> $GITHUB_OUTPUT
     
     - name: Build docker image
-      run: docker build -t carlostinin/nlw.devops.trail:${{ steps.generate_sha.output.sha }} .
+      run: docker build -t carlostinin/nlw-devops-trail:${{ steps.generate_sha.outputs.sha }} .
